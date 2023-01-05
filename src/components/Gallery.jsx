@@ -7,8 +7,18 @@ function Gallery(props){
         )
     })
 
+    const layoutStyle = {
+        'display': 'flex',
+        'justifyContent': 'center',
+        'alignItems': 'stretch',
+        'flexWrap': 'wrap',
+        'gap': '8px'
+    }
+
     return (
-        <div>{display}</div>
+        <div style={layoutStyle}>
+            {display}
+        </div>
     )
 }
 

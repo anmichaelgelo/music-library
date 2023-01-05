@@ -19,7 +19,6 @@ function App(){
             }
           })
           const resData = await response.json()
-          console.log(resData)
 
           if(resData.length !== 0) {
             return setData(resData.results)
@@ -29,19 +28,31 @@ function App(){
         }
   
         fetchData()
-
-        console.log('filled')
       }
     }, [search])
 
     const handleSearch = (event, term) => {
-      event.preventDefault()
+      // event.preventDefault()
       setSearch(term)
     }
 
+    const handleClearSearch = () => {
+      setSearch('')
+      setData([])
+    }
+
+    const layoutStyle = {
+      'display': 'flex',
+      'justifyContent': 'center',
+      'alignItems': 'center',
+      'flexDirection': 'column'
+    }
+
     return (
-        <div>
-            <SearchBar handleSearch={handleSearch} />
+        <div style={layoutStyle}>
+            <SearchBar 
+              handleSearch={handleSearch}
+              handleClearSearch={handleClearSearch} />
             {message}
             <Gallery data={data} />
         </div>
