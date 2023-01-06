@@ -5,23 +5,16 @@ function GalleryItem(props) {
 
     const simpleStyle = {
         'width': '25vw',
-        // 'height': '20vh',
-        // 'border': '1px solid black',
-        // 'margin': '2px',
         'padding': '16px',
         'borderRadius': '4px',
-        'color': '#fff',
+        'color': '#f3f3f3',
         'backgroundColor': '#123',
         'fontWeight': 'normal',
     }
     
     const detailStyle = {
         'width': '80vw',
-        // 'height': '20vh',
-        // 'border': '1px solid black',
-        // 'margin': '2px',
         'background': `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url(${props.item.artworkUrl100}) no-repeat`,
-        // 'backgroundRepeat': 'no-repeat',
         'backgroundSize': 'cover',
         'padding': '16px',
         'borderRadius': '4px',
