@@ -17,11 +17,7 @@ function App(){
       if(search){
         const fetchData = async () => {
           document.title = `${search} Music`
-          const response = await fetch(API_URL + search, {
-            headers: {
-              mode: 'no-cors'
-            }
-          })
+          const response = await fetch(API_URL + search)
           const resData = await response.json()
 
           if(resData.length !== 0) {
