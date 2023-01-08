@@ -5,10 +5,12 @@ function SearchBar(props) {
 
     const titleCase = (string) => {
         let splitWords = string.toLowerCase().split(' ')
-        for(var i = 0; i< splitWords.length; i++){
-            splitWords[i] = splitWords[i][0].toUpperCase() + splitWords[i].slice(1)
+        for(let i = 0; i < splitWords.length; i++){
+            if(splitWords[i][0]){
+                splitWords[i] = splitWords[i][0].toUpperCase() + splitWords[i].slice(1)
+            }
         }
-
+    
         setSentence(splitWords.join(' '))
         return sentence
     }

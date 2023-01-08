@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Gallery from './components/Gallery'
 import SearchBar from './components/SearchBar'
