@@ -13,11 +13,7 @@ function App(){
       if(search){
         const fetchData = async () => {
           document.title = `${search} Music`
-          const response = await fetch(API_URL + search, {
-            headers: {
-              mode: 'no-cors'
-            }
-          })
+          const response = await fetch(API_URL + search)
           const resData = await response.json()
 
           if(resData.length !== 0) {
@@ -31,8 +27,8 @@ function App(){
       }
     }, [search])
 
-    const handleSearch = (event, term) => {
-      // event.preventDefault()
+    const handleSearch = (e, term) => {
+      // e.preventDefault()
       setSearch(term)
     }
 
@@ -50,8 +46,7 @@ function App(){
 
     return (
         <div style={layoutStyle}>
-            <SearchBar 
-              handleSearch={handleSearch}
+            <SearchBar handleSearch={handleSearch}
               handleClearSearch={handleClearSearch} />
             {message}
             <Gallery data={data} />
