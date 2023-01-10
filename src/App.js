@@ -54,8 +54,6 @@ function App(){
 
     return (
         <div style={layoutStyle}>
-            <SearchBar handleSearch={handleSearch}
-              handleClearSearch={handleClearSearch} />
             {message}
             <Router>
               <Routes>
