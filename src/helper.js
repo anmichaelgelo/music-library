@@ -18,7 +18,7 @@ const wrapPromise = async (promise) => {
     })
 
     return {
-        read: function() {
+        read() {
             if(status === 'pending') {
                 throw suspender
             } else if (status === 'error') {
