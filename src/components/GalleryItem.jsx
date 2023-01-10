@@ -8,7 +8,7 @@ function GalleryItem(props) {
         'width': '25vw',
         'padding': '16px',
         'borderRadius': '4px',
-        'color': '#fff',
+        'color': '#f3f3f3',
         'backgroundColor': '#123',
         'fontWeight': 'normal',
     }

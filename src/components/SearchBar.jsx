@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { SearchContext } from '../context/SearchContext'
 
-function SearchBar(props) {
+function SearchBar() {
     // let [searchTerm, setSearchTerm] = useState('')
     let [sentence, setSentence] = useState([])
-
+    const { term, handleSearch, handleClearSearch } = useContext(SearchContext)
+    
     const titleCase = (string) => {
         let splitWords = string.toLowerCase().split(' ')
         for(var i = 0; i< splitWords.length; i++){
@@ -18,10 +20,11 @@ function SearchBar(props) {
 
     return (
         <form>
-            <input type="text" 
-                placeholder="Enter a search term here"
-                onChange={e => props.handleSearch(e, titleCase(e.target.value))} />
-            <input type="reset" value="Clear" onClick={props.handleClearSearch} />
+            <input type="text"
+                ref={term} 
+                placeholder="Search here..." />
+            <button type="reset" onClick={handleClearSearch}>Clear</button>
+            <button type="button"  onClick={e => handleSearch(e, titleCase(term.current.value))}>Submit</button>
         </form>
     )
 }
